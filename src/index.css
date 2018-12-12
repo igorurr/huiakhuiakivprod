@@ -9,6 +9,80 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+
+#App {
+    margin: 100px auto;
+    width: 900px;
+}
+
+.inline * {
+  display: inline !important;
+  width: auto !important;
+}
+
+.inputs-mini input {
+  width: 70px !important;
+  margin: 0 7px !important;
+}
+
+.form-group,
+.input-group {
+  margin: 7px 0;
+}
+
+.input-group-text {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  color: #000 !important;
+}
+
+.input-group-prepend .input-group-text {
+  padding-right: 5px !important;
+}
+
+.input-group-append .input-group-text {
+  padding-left: 5px !important;
+}
+
+.input-group .form-control {
+  border-radius: 4px !important;
+}
+
+.btn-group {
+  display: flex;
+  flex-flow: wrap;
+}
+
+
+
+
+.selector .another-item a {
+  display: none;
+  position: absolute;
+  font-size: 10px;
+  top: -3px;
+  right: 2px;
+}
+.selector .another-item:hover a {
+  display: block;
+}
+
+
+.selector .new-another-item input {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.selector .new-another-item {
+  border: 1px solid #ced4da !important;
+}
+
+.selector input {
+  height: 24px;
+  padding: 0;
+  border: none !important;
 }
