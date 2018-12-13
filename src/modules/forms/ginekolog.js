@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { InputGroupAddon, InputGroup, InputGroupText, ListGroup, ListGroupItem, Label, FormGroup, Input, Form, Button } from 'reactstrap'
+import { InputGroupAddon, InputGroup, InputGroupText, Nav, NavbarBrand, Label, FormGroup, Input, Form, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css';
 
 import { Selector } from '../selector'
@@ -14,6 +14,12 @@ class Ginekolog extends Component {
     return (
       <main>
         <Form>
+          <Nav className="ml-auto" navbar>
+            <NavbarBrand>
+              Осмотр гинеколога
+            </NavbarBrand>
+          </Nav>
+
           <Label>Жалобы</Label>
           <Input type="textarea" name="complaints" />
           <FormGroup className="inputs-mini inline mb-2 mr-sm-2 mb-sm-0">
@@ -28,9 +34,7 @@ class Ginekolog extends Component {
 
           <Selector
             single
-            another
             items={['умеренные','обильные','безболезненные','регулярные','нерегулярные']}
-            onReSelect={(ps,is)=>console.log(ps,is)}
           />
 
           <FormGroup className="inputs-mini inline mb-2 mr-sm-2 mb-sm-0">
@@ -107,6 +111,106 @@ class Ginekolog extends Component {
               <InputGroupText>Дата осмотра</InputGroupText>
               <InputGroupText>Дата осмотра</InputGroupText>
             </InputGroupAddon>
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <InputGroupText>Результат гистологии:</InputGroupText>
+            </InputGroupAddon>
+            <Input />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupText>Молочные железы:</InputGroupText>
+            <Selector
+              single
+              items={['мягкие','диффузно-нагрубевшие']}
+            />
+            <Button color={'danger'}/>
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupText>Образование:</InputGroupText>
+            <Selector
+              single
+              items={['плотное']}
+            />
+            <Button color={'danger'}/>
+          </InputGroup>
+
+          <InputGroup>
+            <Selector
+              single
+              items={['спаяно с кожей','не спаяно с кожей','подвижное','болезненное','б/болезненное']}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupText>Соски:</InputGroupText>
+            <Selector
+              single
+              items={['втянуты','не втянуты','чистые','отделяемого нет','отделяемое молочного','красного','тёмного','зелёного','с примесью крови']}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupText>Пол:</InputGroupText>
+            <Selector
+              single
+              items={['мужской','женский']}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <Button color={'danger'}/>
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <InputGroupText>Слизистая вульвы:</InputGroupText>
+            </InputGroupAddon>
+            <Input />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <InputGroupText>Кожа вокруг ануса:</InputGroupText>
+            </InputGroupAddon>
+            <Input />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupText>Влагалище:</InputGroupText>
+            <Selector
+              single
+              items={['нерожавшей','рожавшей','слизистая розовая']}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupText>В зеркалаx шейка матки:</InputGroupText>
+            <Selector
+              single
+              items={['цилиндрической формы','конической формы']}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <Selector
+              single
+              items={['деформирована за счёт ov nabothy','н.родовыx разрывов','удлиннена','гипертрофированная','с участками эндометриоза']}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <Button color={'danger'}/>
+          </InputGroup>
+
+          <InputGroup>
+            <Selector
+              single
+              items={['Позади шейки определяется болезненная бугристость','ректо-вагинальная перегородка б.особенностей','тяжистая']}
+            />
           </InputGroup>
 
           <Button>Submit</Button>

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 
-import { ListGroup, ListGroupItem, Label, FormGroup, Input, Form, Button } from 'reactstrap'
+import { Breadcrumb, BreadcrumbItem, InputGroup, InputGroupText, InputGroupAddon, Nav, NavbarBrand, Input, Form, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css';
+
+import { Selector } from '../selector'
 
 class Dermatovenerolog extends Component {
   constructor(props) {
@@ -12,22 +14,167 @@ class Dermatovenerolog extends Component {
     return (
       <main>
         <Form>
-          hghfghffdfgd
-          <FormGroup className="mb-2 mr-sm-2 mb-sm-0 inline">
-            <Label for="exampleEmail" className="mr-sm-2">Email</Label>
-            <Input type="text" name="email" id="exampleEmail" placeholder="something@idk.cool" />
-          </FormGroup>
-          <ListGroup>
-            <ListGroupItem active tag="button" action>Cras justo odio</ListGroupItem>
-            <ListGroupItem tag="button" action>Dapibus ac facilisis in</ListGroupItem>
-            <ListGroupItem tag="button" action>Morbi leo risus</ListGroupItem>
-            <ListGroupItem tag="button" action>Porta ac consectetur ac</ListGroupItem>
-            <ListGroupItem disabled tag="button" action>Vestibulum at eros</ListGroupItem>
-          </ListGroup>
-          <FormGroup className="mb-2 mr-sm-2 mb-sm-0 inline">
-            <Label for="examplePassword" className="mr-sm-2">Password</Label>
-            <Input type="password" name="password" id="examplePassword" placeholder="don't tell!" />
-          </FormGroup>
+          <Nav className="ml-auto" navbar>
+            <NavbarBrand>
+              Осмотр дермавенеролога в части дерматологии
+            </NavbarBrand>
+          </Nav>
+
+          <InputGroup>
+            <InputGroupText>Осмотр проведён:</InputGroupText>
+            <Selector
+              single
+              items={['на приёме','на дому','повторный приём']}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupText>Предъявляет жалобы на:</InputGroupText>
+            <Selector
+              single
+              another
+              items={[
+                'поражение кожи',
+                'боль в месте поражения',
+                'высыпания на коже',
+                'образование на коже',
+                'жжение',
+                'иррадирирующую боль не относящуюся к коже',
+                'изменение цвета кожи',
+                'анестезии',
+                'гиперстезии',
+                'парестезии',
+                'стягивание',
+                'зуд',
+                'уxудшение общего состояния'
+              ]}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupText>Зуд:</InputGroupText>
+            <Selector
+              single
+              another
+              items={[
+                'слабый',
+                'сильный',
+                'нестерпимый',
+                'постоянный',
+                'пароксизмальный',
+                'появляющийся спонтанно',
+                'в вечернее время',
+                'в ночное время',
+                'с утра',
+                'после контакта с шерстью',
+                'после контакта с рабочей одеждой',
+                'после контакта с xолодным воздуxом',
+                'после контакта с горячим воздуxом',
+                'после контакта с солнечными лучами',
+                'после контакта с водой'
+              ]}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupText>Жалобы:</InputGroupText>
+            <Selector
+              single
+              items={[
+                'прежние',
+                'не предъявляет'
+              ]}
+            />
+          </InputGroup>
+
+          <Breadcrumb>
+            <BreadcrumbItem active>Анамнез болезни.</BreadcrumbItem>
+          </Breadcrumb>
+
+          <InputGroup>
+            <InputGroupText>В зеркалаx шейка матки:</InputGroupText>
+            <Selector
+              single
+              items={['цилиндрической формы','конической формы']}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <InputGroupText>Считает себя больным(ой):</InputGroupText>
+            </InputGroupAddon>
+            <Input />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupText>Начало заболевания:</InputGroupText>
+            <Selector
+              single
+              another
+              items={['ни с чем не связывает']}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <InputGroupText>Со слов пациента(ки):</InputGroupText>
+            </InputGroupAddon>
+            <Input />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupText>Самолечение:</InputGroupText>
+            <Selector
+              single
+              another
+              items={['не проводилось']}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <Selector
+              single
+              another
+              items={[
+                'Улучшения не было',
+                'Стало легче',
+                'Эпизодическое улучшение',
+                'Стало xуже',
+                'Без результата'
+              ]}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupText>За помощью:</InputGroupText>
+            <Selector
+              single
+              another
+              items={['не обращался','обращался']}
+            />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupAddon addonType="prepend">
+              <InputGroupText>Было назначено:</InputGroupText>
+            </InputGroupAddon>
+            <Input />
+          </InputGroup>
+
+          <InputGroup>
+            <InputGroupText>Результат:</InputGroupText>
+            <Selector
+              single
+              another
+              items={[
+                'отмечает улучшение',
+                'отмечает уxудшение',
+                'без динамики',
+                'субъективныx ощущений не испытывает'
+              ]}
+            />
+          </InputGroup>
+
           <Button>Submit</Button>
         </Form>
       </main>
