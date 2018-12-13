@@ -1,3 +1,11 @@
-import { Selector }             from './components'
+import {
+  Selector,
+  SelectorItem,
+  SelectorInputItem
+} from './components'
 
-export { Selector }
+import {
+  createSelectorItem
+} from './helpers'
+
+export { createSelectorItem, Selector, SelectorItem, SelectorInputItem }

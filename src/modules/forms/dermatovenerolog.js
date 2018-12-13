@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Breadcrumb, BreadcrumbItem, InputGroup, InputGroupText, InputGroupAddon, Nav, NavbarBrand, Input, Form, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css';
 
-import { Selector } from '../selector'
+import { Selector, createSelectorItem } from '../selector'
 
 class Dermatovenerolog extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class Dermatovenerolog extends Component {
   render() {
     return (
       <main>
-        <Form>
+        <formrwerwerwer>
           <Nav className="ml-auto" navbar>
             <NavbarBrand>
               Осмотр дермавенеролога в части дерматологии
@@ -24,10 +24,16 @@ class Dermatovenerolog extends Component {
             <InputGroupText>Осмотр проведён:</InputGroupText>
             <Selector
               single
-              items={['на приёме','на дому','повторный приём']}
-            />
+              another
+              onReSelect={( arg1, arg2 ) => console.log(arg1, arg2)}
+            >
+              { createSelectorItem( '1', 'q', ( change, remove ) => 'на приёме' ) }
+              { createSelectorItem( '2', 'w', ( change, remove ) => 'на дому' ) }
+              { createSelectorItem( '3', 'e', ( change, remove ) => 'повторный приём' ) }
+            </Selector>
           </InputGroup>
 
+          {/*
           <InputGroup>
             <InputGroupText>Предъявляет жалобы на:</InputGroupText>
             <Selector
@@ -48,7 +54,9 @@ class Dermatovenerolog extends Component {
                 'зуд',
                 'уxудшение общего состояния'
               ]}
-            />
+            >
+              <SelectorItem keyItem={'h'}>hui</SelectorItem>
+            </Selector>
           </InputGroup>
 
           <InputGroup>
@@ -173,10 +181,10 @@ class Dermatovenerolog extends Component {
                 'субъективныx ощущений не испытывает'
               ]}
             />
-          </InputGroup>
+          </InputGroup>*/}
 
           <Button>Submit</Button>
-        </Form>
+        </formrwerwerwer>
       </main>
     );
   }
