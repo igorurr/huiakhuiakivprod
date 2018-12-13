@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
-import { Button, Input } from 'reactstrap'
+import { Input, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css';
 
 class AnotherItem extends Component {
@@ -9,12 +9,12 @@ class AnotherItem extends Component {
     super(props);
 
     this.state =  {
-      text: props.text,
+      text: props.children,
       editable: false
     };
 
     this.updateInputValue   = this.updateInputValue.bind(this);
-    this.onButtonClick      = this.onButtonClick.bind(this);
+    this.onElementClick      = this.onElementClick.bind(this);
     this.onInputBlur        = this.onInputBlur.bind(this);
     this.onRemoveClick      = this.onRemoveClick.bind(this);
     this.toggleEditing      = this.toggleEditing.bind(this);
@@ -26,19 +26,18 @@ class AnotherItem extends Component {
     });
   }
 
-  onButtonClick() {
-    this.props.onClick();
+  onElementClick() {
     this.toggleEditing( true );
   }
 
   onInputBlur() {
+    this.props.change( this.state.text );
     this.toggleEditing( false );
   }
 
   onRemoveClick(evt) {
-    console.log(evt);
     evt.stopPropagation();
-    this.props.onRemove();
+    this.props.remove();
   }
 
   toggleEditing( newVal ) {
@@ -48,17 +47,13 @@ class AnotherItem extends Component {
   }
 
   render() {
-    const { isActive } = this.props;
     const { text, editable } = this.state;
+
     return (
-      <Button
-        className={'another-item'}
-        color={isActive ? 'warning' : 'link'}
-        onClick={this.onButtonClick}
-        active={isActive}
-      >
+      <a onClick={this.onElementClick} className={'another-item'}>
         <a onClick={this.onRemoveClick}>X</a>
-        { editable ?
+        {
+          editable ?
           <Input
             onChange={this.updateInputValue}
             value={text}
@@ -67,7 +62,7 @@ class AnotherItem extends Component {
           /> :
           text
         }
-      </Button>
+      </a>
     );
   }
 

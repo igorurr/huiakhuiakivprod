@@ -21,11 +21,11 @@ class Item extends Component {
   }
 
   render() {
-    const { onClick, onBlur, isActive, isInput } = this.props;
+    const { onClick, onBlur, isActive, children } = this.props;
     const { text } = this.state;
     return (
-      <Button color={isActive ? 'warning' : 'link'} onClick={onClick} active={isActive}>
-        { isInput ? <Input onChange={this.updateInputValue} value={text} onBlur={onBlur} /> : text}
+      <Button className={'item'} color={isActive ? 'warning' : 'link'} onClick={onClick} active={isActive}>
+        { children }
       </Button>
     );
   }

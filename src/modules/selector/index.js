@@ -1,6 +1,6 @@
 import {
   Selector,
-  SelectorItem,
+  SelectorTextItem,
   SelectorInputItem
 } from './components'
 
@@ -8,4 +8,4 @@ import {
   createSelectorItem
 } from './helpers'
 
-export { createSelectorItem, Selector, SelectorItem, SelectorInputItem }
+export { createSelectorItem, Selector, SelectorTextItem, SelectorInputItem }

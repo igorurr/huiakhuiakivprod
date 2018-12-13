@@ -59,6 +59,22 @@ code {
 
 
 
+.selector .btn {
+  padding: 0;
+}
+
+.selector .btn p,
+.selector .another-item {
+  padding: 6px 12px;
+}
+
+.selector .btn p {
+  margin: 0;
+}
+
+.selector .another-item {
+  display: block;
+}
 
 .selector .another-item a {
   display: none;

@@ -12,7 +12,7 @@ import { createSelectorItem } from '../index';
     another - возможность дописать свой вариант
     anothers - возможность дописывать свои варианты
     selected - по умолчанию выделенные элементы
-    onReSelect - cобытие при изменении selected( [positions], [items] )
+    onChange - cобытие при изменении selected( [positions], [items] )
       single==true: onSelect( position, item ),
       single==false: onSelect( [positions], [items] )
 
@@ -23,6 +23,9 @@ import { createSelectorItem } from '../index';
       key: string,
       val: ReactComponent
     }
+
+    <SelectorTextItem keyItem={'1'}>на приёме</SelectorTextItem>
+    { createSelectorItem( '2', 'w', ( change, remove ) => 'на дому' ) }
 */
 
 class Selector extends Component {
@@ -30,17 +33,27 @@ class Selector extends Component {
     super(props);
 
     this.state = {
-      items: props.children,
+      items: this.childrenToItems( props.children ),
       selected: props.selected ? props.selected : [],
-      anotherItemsCount: 0
+      nextAnotherItem: 0
     };
 
     this.toggleItem         = this.toggleItem.bind(this);
-    this.invokeOnReSelect   = this.invokeOnReSelect.bind(this);
+    this.invokeOnChange     = this.invokeOnChange.bind(this);
     this.newAnotherItem     = this.newAnotherItem.bind(this);
-    this.removeAnotherItem  = this.removeAnotherItem.bind(this);
     this.changeElement      = this.changeElement.bind(this);
-    this.removeElement      = this.removeElement.bind(this);
+    this.removeElement              = this.removeElement.bind(this);
+    this.updateSelectedAfterRemove  = this.updateSelectedAfterRemove.bind(this);
+  }
+
+  childrenToItems( children ) {
+    return children.map( item => {
+      if( !item.type )
+        return item;
+
+      else
+        return item.type(item.props);
+    } );
   }
 
   toggleItem( key ) {
@@ -64,20 +77,20 @@ class Selector extends Component {
       selected: newSelected
     });
 
-    this.invokeOnReSelect( newSelected );
+    this.invokeOnChange( newSelected );
   }
 
   /*
       keys==[key,...]
   */
-  invokeOnReSelect( keys ) {
-    if( !('onReSelect' in this.props) )
+  invokeOnChange(keys ) {
+    if( !('onChange' in this.props) )
       return;
 
     if( this.props.single )
-      this.props.onReSelect( keys[0], this.state.items.find( item => item.key === keys[0] ).value );
+      this.props.onChange( keys[0], this.state.items.find( item => item.key === keys[0] ).value );
     else {
-      this.props.onReSelect( keys.map( key => ({
+      this.props.onChange( keys.map( key => ({
         key: key,
         value: this.state.items.find( item => item.key === key ).value
       }) ) );
@@ -88,22 +101,23 @@ class Selector extends Component {
     if( value === '' )
       return;
 
-    const key = 'another' + this.state.anotherItemsCount;
+    const key = 'another' + this.state.nextAnotherItem;
 
     this.setState( (oldState) => ({
-      anotherItemsCount: oldState.anotherItemsCount + 1,
+      nextAnotherItem: oldState.nextAnotherItem + 1,
       items: [
         ...oldState.items,
         createSelectorItem(
           key,
           value,
-          ( change, remove ) =>
+          ( change, remove ) => (
             <AnotherItem
               change={change}
               remove={remove}
             >
-              value
+              {value}
             </AnotherItem>
+          )
         )
       ]
     }) );
@@ -111,30 +125,48 @@ class Selector extends Component {
   }
 
   changeElement( key, value ) {
-    console.log('c',key,value);
+    let items = this.state.items;
+    let item = items.find( el => el.key === key );
+    item.value = value;
+
+    this.setState({
+      items
+    });
+
+    console.log(key, value, items)
+
+    if ( this.state.selected.find( el => el === key ) !== undefined )
+      this.invokeOnChange( this.state.selected );
   }
 
   removeElement( key ) {
-    console.log('r',key);
+    const items = this.state.items.filter( el => el.key !== key );
+
+    this.setState({
+      items: items
+    });
+
+    this.updateSelectedAfterRemove( key );
   }
 
-  // position соответствует position anotherItems в render
-  removeAnotherItem( position ) {
-    if( position < this.props.items.length )
+  updateSelectedAfterRemove( key ) {
+    if ( this.state.selected.find( el => el === key ) === undefined )
       return;
 
-    position -= this.props.items.length;
+    const selected = this.state.selected.filter( el => el !== key );
 
-    this.setState( (oldState) => ({
-      anotherItems: oldState.anotherItems.filter( (el,i) => i !== position )
-    }) );
+    this.setState({
+      selected
+    });
+
+    this.invokeOnChange( selected );
   }
 
   render() {
     const { another, anothers } = this.props;
-    const { selected, anotherItemsCount, items } = this.state;
+    const { selected, nextAnotherItem, items } = this.state;
 
-    const anotherActive = anothers || (another && anotherItemsCount === 0);
+    const anotherActive = anothers || (another && nextAnotherItem === 0);
 
     return (
       <ButtonGroup className={'selector'} >
