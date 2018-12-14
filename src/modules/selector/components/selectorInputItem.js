@@ -1,17 +1,24 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 
-import { Button, Input } from 'reactstrap'
+import { Input, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css';
+import {createSelectorItem} from "../index";
 
-class Item extends Component {
+class SelectorInputItem extends Component {
   constructor(props) {
     super(props);
 
     this.state =  {
-      text: typeof props.children === 'string' ? props.children : ''
+      text: props.value,
+      editable: false
     };
 
-    this.updateInputValue = this.updateInputValue.bind(this);
+    this.updateInputValue   = this.updateInputValue.bind(this);
+    this.onElementClick      = this.onElementClick.bind(this);
+    this.onInputBlur        = this.onInputBlur.bind(this);
+    this.onRemoveClick      = this.onRemoveClick.bind(this);
+    this.toggleEditing      = this.toggleEditing.bind(this);
   }
 
   updateInputValue(evt) {
@@ -20,15 +27,66 @@ class Item extends Component {
     });
   }
 
+  onElementClick() {
+    this.toggleEditing( true );
+  }
+
+  onInputBlur() {
+    this.props.change( this.state.text );
+    this.toggleEditing( false );
+  }
+
+  onRemoveClick(evt) {
+    evt.stopPropagation();
+    this.props.remove();
+  }
+
+  toggleEditing( newVal ) {
+    this.setState({
+      editable: newVal
+    });
+  }
+
   render() {
-    const { onClick, onBlur, isActive, isInput } = this.props;
-    const { text } = this.state;
+    const { textBefore, textAfter, keyItem, value, removable } = this.props;
+    const { text, editable } = this.state;
+
     return (
-      <Button color={isActive ? 'warning' : 'link'} onClick={onClick} active={isActive}>
-        { isInput ? <Input onChange={this.updateInputValue} value={text} onBlur={onBlur} /> : text}
-      </Button>
+      <a onClick={this.onElementClick} className={'input-item'}>
+        { removable ? <a onClick={this.onRemoveClick}>X</a> : null }
+        { (textBefore ? textBefore : '') + ' ' }
+        {
+          editable ?
+            <Input
+              onChange={this.updateInputValue}
+              value={text}
+              onBlur={this.onInputBlur}
+              ref={ el => this.inputDOMElement = ReactDOM.findDOMNode(el) }
+            /> :
+            text
+        }
+        { ' ' + (textAfter ? textAfter : '') }
+      </a>
     );
+  }
+
+  componentDidUpdate() {
+    if ( this.inputDOMElement === null || this.inputDOMElement === undefined )
+      return;
+
+    this.inputDOMElement.focus();
   }
 }
 
-export default Item;
+export default ({ textBefore, textAfter, keyItem, value, removable }) =>
+  createSelectorItem( keyItem, value, ( change, remove ) => (
+    <SelectorInputItem
+      textBefore={textBefore}
+      textAfter={textAfter}
+      keyItem={keyItem}
+      value={value}
+      removable={removable}
+      change={change}
+      remove={remove}
+    />
+  ) );

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Breadcrumb, BreadcrumbItem, InputGroup, InputGroupText, InputGroupAddon, Nav, NavbarBrand, Input, Form, Button } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css';
 
-import { Selector, SelectorTextItem, createSelectorItem } from '../selector'
+import { Selector, SelectorTextItem, SelectorInputItem } from '../selector'
 
 class Dermatovenerolog extends Component {
   constructor(props) {
@@ -26,13 +26,16 @@ class Dermatovenerolog extends Component {
               anothers
               onChange={( arg1, arg2 ) => console.log(arg1, arg2)}
             >
-              <SelectorTextItem keyItem={'1'}>на приёме</SelectorTextItem>
-              <SelectorTextItem keyItem={'2'}>на дому</SelectorTextItem>
-              <SelectorTextItem keyItem={'3'}>повторный приём</SelectorTextItem>
+              <SelectorInputItem keyItem={'3'} value={'78d'} textBefore={'dsf'} textAfter={'qer'} />
             </Selector>
           </InputGroup>
 
           {/*
+              <SelectorTextItem keyItem={'1'}>на приёме</SelectorTextItem>
+              <SelectorTextItem keyItem={'2'}>на дому</SelectorTextItem>
+              <SelectorTextItem keyItem={'3'}>повторный приём</SelectorTextItem>
+
+
           <InputGroup>
             <InputGroupText>Предъявляет жалобы на:</InputGroupText>
             <Selector

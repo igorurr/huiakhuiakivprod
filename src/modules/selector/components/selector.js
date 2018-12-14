@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { ButtonGroup } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css';
 
-import { AnotherItem, Item, NewAnotherItem } from './index'
+import { SelectorInputItem, Item, NewAnotherItem } from './index'
 import { createSelectorItem } from '../index';
 
 /*
@@ -38,6 +38,7 @@ class Selector extends Component {
       nextAnotherItem: 0
     };
 
+    this.childrenToItems    = this.childrenToItems.bind(this);
     this.toggleItem         = this.toggleItem.bind(this);
     this.invokeOnChange     = this.invokeOnChange.bind(this);
     this.newAnotherItem     = this.newAnotherItem.bind(this);
@@ -47,13 +48,18 @@ class Selector extends Component {
   }
 
   childrenToItems( children ) {
-    return children.map( item => {
-      if( !item.type )
-        return item;
+    if ( Array.isArray(children) )
+      return children.map( this.childrenToItem );
 
-      else
-        return item.type(item.props);
-    } );
+    else
+      return [ this.childrenToItem( children ) ];
+  }
+
+  childrenToItem( item ) {
+    if( !item.type )
+      return item;
+
+    return item.type(item.props);
   }
 
   toggleItem( key ) {
@@ -107,18 +113,7 @@ class Selector extends Component {
       nextAnotherItem: oldState.nextAnotherItem + 1,
       items: [
         ...oldState.items,
-        createSelectorItem(
-          key,
-          value,
-          ( change, remove ) => (
-            <AnotherItem
-              change={change}
-              remove={remove}
-            >
-              {value}
-            </AnotherItem>
-          )
-        )
+        this.childrenToItem( <SelectorInputItem keyItem={key} value={value} removable /> )
       ]
     }) );
 
@@ -132,8 +127,6 @@ class Selector extends Component {
     this.setState({
       items
     });
-
-    console.log(key, value, items)
 
     if ( this.state.selected.find( el => el === key ) !== undefined )
       this.invokeOnChange( this.state.selected );

@@ -59,12 +59,17 @@ code {
 
 
 
+.selector button,
+.selector a {
+  text-decoration: none !important;
+}
+
 .selector .btn {
   padding: 0;
 }
 
 .selector .btn p,
-.selector .another-item {
+.selector .input-item {
   padding: 6px 12px;
 }
 
@@ -72,26 +77,25 @@ code {
   margin: 0;
 }
 
-.selector .another-item {
-  display: block;
+.selector .input-item {
+  display: flex;
+}
+.selector .input-item input {
+  margin: 0 3px;
+  padding: 0 3px;
 }
 
-.selector .another-item a {
+.selector .input-item a {
   display: none;
   position: absolute;
   font-size: 10px;
   top: -3px;
   right: 2px;
 }
-.selector .another-item:hover a {
+.selector .input-item:hover a {
   display: block;
 }
 
-
-.selector .new-another-item input {
-  outline: none !important;
-  box-shadow: none !important;
-}
 
 .selector .new-another-item {
   border: 1px solid #ced4da !important;
@@ -100,5 +104,12 @@ code {
 .selector input {
   height: 24px;
   padding: 0;
+}
+
+.selector input,
+.selector input:active,
+.selector input:hover,
+.selector input:focus {
   border: none !important;
+  outline: none !important;
 }
