@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a98b45-0124-48ea-ad6f-dfac72163679" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/modules/selector/components/inputItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dermatovenerolog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/forms/dermatovenerolog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/forms/dermatovenerolog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/selector/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/selector/components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/selector/components/newAnotherItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/selector/components/newAnotherItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/selector/components/selector.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/selector/components/selector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/selector/components/selectorInputItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/selector/components/selectorInputItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/selector/components/selectorTextItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/selector/components/selectorTextItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/forms/ginekolog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/forms/ginekolog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/forms/hirurg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/forms/hirurg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/forms/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/forms/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/forms/lor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/forms/lor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/forms/nevrolog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/forms/nevrolog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/forms/psiholog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/forms/psiholog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/forms/stomatolog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/forms/stomatolog.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,28 +27,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="selector.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/selector/components/selector.js">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/modules/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="102" column="32" lean-forward="true" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
+            <state relative-caret-position="119">
+              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
               <folding>
-                <element signature="e#0#40#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dermatovenerolog.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/modules/forms/dermatovenerolog.js">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="197">
-              <caret line="185" column="29" selection-start-line="185" selection-start-column="29" selection-end-line="185" selection-end-column="29" />
+              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dermatovenerolog.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dermatovenerolog.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
               <folding>
-                <element signature="e#0#40#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dermatovenerolog.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/dermatovenerolog.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-198" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -72,6 +97,9 @@
       <find>props</find>
       <find>updateValueSelector</find>
       <find>console</find>
+      <find>SelectorInputItem</find>
+      <find>моло</find>
+      <find>app</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Рурик\Desktop\trash\huiakhuiakivprodakhn</dir>
@@ -84,16 +112,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/components/App.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/modules/forms/index.js" />
         <option value="$PROJECT_DIR$/src/modules/components/Selector.js" />
         <option value="$PROJECT_DIR$/src/modules/components/selectorItem.js" />
         <option value="$PROJECT_DIR$/src/modules/components/index.js" />
         <option value="$PROJECT_DIR$/src/modules/components/newAnotherItem.js" />
         <option value="$PROJECT_DIR$/src/modules/components/anotherItem.js" />
         <option value="$PROJECT_DIR$/src/modules/components/selector.js" />
-        <option value="$PROJECT_DIR$/src/modules/forms/ginekolog.js" />
-        <option value="$PROJECT_DIR$/src/modules/App.js" />
         <option value="$PROJECT_DIR$/src/modules/selector/components/selectorItem.js" />
         <option value="$PROJECT_DIR$/src/modules/selector/helpers.js" />
         <option value="$PROJECT_DIR$/src/modules/selector/helpers/createItem.js" />
@@ -101,7 +125,6 @@
         <option value="$PROJECT_DIR$/src/modules/selector/index.js" />
         <option value="$PROJECT_DIR$/src/modules/selector/helpers/createSelectorItem.js" />
         <option value="$PROJECT_DIR$/src/modules/selector/components/item.js" />
-        <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/modules/selector/components/selectorInputItem.js" />
         <option value="$PROJECT_DIR$/src/modules/selector/components/index.js" />
         <option value="$PROJECT_DIR$/src/modules/selector/components/inputItem.js" />
@@ -109,7 +132,17 @@
         <option value="$PROJECT_DIR$/src/modules/selector/components/newAnotherItem.js" />
         <option value="$PROJECT_DIR$/src/modules/selector/components/selectorTextItem.js" />
         <option value="$PROJECT_DIR$/src/modules/selector/components/selector.js" />
+        <option value="$PROJECT_DIR$/src/modules/forms/lor.js" />
+        <option value="$PROJECT_DIR$/src/modules/forms/index.js" />
+        <option value="$PROJECT_DIR$/src/modules/forms/nevrolog.js" />
+        <option value="$PROJECT_DIR$/src/modules/forms/psiholog.js" />
+        <option value="$PROJECT_DIR$/src/modules/forms/stomatolog.js" />
+        <option value="$PROJECT_DIR$/src/modules/forms/ginekolog.js" />
         <option value="$PROJECT_DIR$/src/modules/forms/dermatovenerolog.js" />
+        <option value="$PROJECT_DIR$/src/index.css" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/dermatovenerolog.js" />
+        <option value="$PROJECT_DIR$/src/modules/App.js" />
       </list>
     </option>
   </component>
@@ -136,8 +169,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="7" />
+    <option name="y" value="26" />
     <option name="width" value="630" />
     <option name="height" value="688" />
   </component>
@@ -156,43 +189,12 @@
             <path>
               <item name="huiakhuiakivprodakhn" type="b2602c69:ProjectViewProjectNode" />
               <item name="huiakhuiakivprodakhn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="huiakhuiakivprodakhn" type="b2602c69:ProjectViewProjectNode" />
               <item name="huiakhuiakivprodakhn" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="huiakhuiakivprodakhn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="huiakhuiakivprodakhn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="huiakhuiakivprodakhn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="huiakhuiakivprodakhn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="selector" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="huiakhuiakivprodakhn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="huiakhuiakivprodakhn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="selector" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="huiakhuiakivprodakhn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="huiakhuiakivprodakhn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="selector" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -213,6 +215,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Рурик\Desktop\trash\huiakhuiakivprodakhn\public" />
       <recent name="C:\Users\Рурик\Desktop\trash\huiakhuiakivprodakhn\src\modules\selector\components" />
       <recent name="C:\Users\Рурик\Desktop\trash\huiakhuiakivprodakhn\src\modules\selector\helpers" />
       <recent name="C:\Users\Рурик\Desktop\trash\huiakhuiakivprodakhn\src\modules\components" />
@@ -252,13 +255,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76459000" />
+    <option name="totallyTimeSpent" value="81170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.21742313" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.25768667" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
@@ -271,11 +274,23 @@
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info id="npm" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.21742313" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32913387" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info id="Favorites" order="1" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,87 +300,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/modules/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/forms/dermatovenerolog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/forms/ginekolog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="43" column="21" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/selector/components/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/selector/components/item.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/selector/components/selector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
@@ -561,50 +495,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/App.js" />
-    <entry file="file://$PROJECT_DIR$/src/modules/forms/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/forms/ginekolog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/selector/helpers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/selector/helpers.js" />
     <entry file="file://$PROJECT_DIR$/src/modules/selector/helpers/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -626,13 +517,6 @@
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="62" column="11" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -677,9 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="44" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -687,9 +568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -700,10 +578,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modules/selector/components/selector.js">
+    <entry file="file://$PROJECT_DIR$/src/modules/forms/hirurg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="160" column="35" selection-end-line="177" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/forms/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/forms/nevrolog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/forms/psiholog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
-          <caret line="102" column="32" lean-forward="true" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
+          <caret line="79" column="13" lean-forward="true" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/forms/lor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="54" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/forms/stomatolog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="98" column="14" selection-start-line="98" selection-start-column="14" selection-end-line="98" selection-end-column="73" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
@@ -712,10 +637,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/forms/dermatovenerolog.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="185" column="29" selection-start-line="185" selection-start-column="29" selection-end-line="185" selection-end-column="29" />
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/forms/ginekolog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="254" column="14" selection-start-line="253" selection-start-column="14" selection-end-line="254" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/manifest.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/selector/components/selector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="108" column="34" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dermatovenerolog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/dermatovenerolog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

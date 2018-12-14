@@ -11,7 +11,6 @@ class Dermatovenerolog extends Component {
   }
 
   render() {
-    console.log(window.location);
     return (
       <main>
         <Form action="/" method="get">
@@ -99,17 +98,6 @@ class Dermatovenerolog extends Component {
           </Breadcrumb>
 
           <InputGroup>
-            <InputGroupText>В зеркалаx шейка матки:</InputGroupText>
-            <Selector
-              single
-              name={'sheikamatki'}
-            >
-              <SelectorTextItem keyItem={'1'}>цилиндрической формы</SelectorTextItem>
-              <SelectorTextItem keyItem={'2'}>конической формы</SelectorTextItem>
-            </Selector>
-          </InputGroup>
-
-          <InputGroup>
             <InputGroupAddon addonType="prepend">
               <InputGroupText>Считает себя больным(ой):</InputGroupText>
             </InputGroupAddon>
@@ -120,10 +108,10 @@ class Dermatovenerolog extends Component {
             <InputGroupText>Начало заболевания:</InputGroupText>
             <Selector
               single
-              another
               name={'nachalozabolevaniya'}
             >
               <SelectorTextItem keyItem={'1'}>ни с чем не связывает</SelectorTextItem>
+              <SelectorInputItem keyItem={'2'} textBefore={'связывает с'} />
             </Selector>
           </InputGroup>
 
@@ -142,6 +130,7 @@ class Dermatovenerolog extends Component {
               name={'samolechenie'}
             >
               <SelectorTextItem keyItem={'1'}>не проводилось</SelectorTextItem>
+              <SelectorInputItem keyItem={'2'} textBefore={'проводилось'} />
             </Selector>
           </InputGroup>
 
@@ -163,11 +152,10 @@ class Dermatovenerolog extends Component {
             <InputGroupText>За помощью:</InputGroupText>
             <Selector
               single
-              another
               name={'zapomochiu'}
             >
               <SelectorTextItem keyItem={'1'}>не обращался</SelectorTextItem>
-              <SelectorTextItem keyItem={'2'}>обращался</SelectorTextItem>
+              <SelectorInputItem keyItem={'2'} textBefore={'обращался'} />
             </Selector>
           </InputGroup>
 

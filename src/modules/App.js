@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 
-import { Dermatovenerolog, Ginekolog } from './forms';
+import { Dermatovenerolog, Ginekolog, Hirurg, Lor, Nevrolog, Psiholog, Stomatolog } from './forms';
 
 class App extends Component {
   render() {
     return (
-      <div id="App">
-        <Dermatovenerolog />
-      </div>
+      <Ginekolog />
     );
   }
 }

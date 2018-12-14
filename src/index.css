@@ -13,7 +13,7 @@ code {
 }
 
 
-#App {
+#root {
     margin: 100px auto;
     width: 900px;
 }
