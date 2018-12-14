@@ -30,10 +30,10 @@ class NewAnotherItem extends Component {
   }
 
   render() {
-    const { isActive, onClick } = this.props;
+    const { isActive } = this.props;
     const { text } = this.state;
     return (
-      <Button className={'new-another-item'} color={isActive ? 'warning' : 'link'} onClick={onClick} active={isActive}>
+      <Button className={'new-another-item'} color={isActive ? 'warning' : 'link'} onClick={()=>{}} active={isActive}>
         <Input onChange={this.updateText} value={text} onBlur={this.onInputBlur} />
       </Button>
     );

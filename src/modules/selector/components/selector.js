@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { ButtonGroup } from 'reactstrap'
 import 'bootstrap/dist/css/bootstrap.css';
 
-import { SelectorInputItem, Item, NewAnotherItem } from './index'
+import { AnotherItem, Item, NewAnotherItem } from './index'
 import { createSelectorItem } from '../index';
 
 /*
@@ -32,27 +32,35 @@ class Selector extends Component {
   constructor(props) {
     super(props);
 
+    const selected = props.selected ? props.selected : [];
+
     this.state = {
       items: this.childrenToItems( props.children ),
-      selected: props.selected ? props.selected : [],
+      selected: selected,
+      valueSelector: JSON.stringify( selected ),
+      countAnotherItems: 0,
       nextAnotherItem: 0
     };
 
-    this.childrenToItems    = this.childrenToItems.bind(this);
-    this.toggleItem         = this.toggleItem.bind(this);
-    this.invokeOnChange     = this.invokeOnChange.bind(this);
-    this.newAnotherItem     = this.newAnotherItem.bind(this);
-    this.changeElement      = this.changeElement.bind(this);
-    this.removeElement              = this.removeElement.bind(this);
-    this.updateSelectedAfterRemove  = this.updateSelectedAfterRemove.bind(this);
+    this.childrenToItems                = this.childrenToItems.bind(this);
+    this.toggleItem                     = this.toggleItem.bind(this);
+    this.invokeOnChange                 = this.invokeOnChange.bind(this);
+    this.updateValueSelector            = this.updateValueSelector.bind(this);
+    this.newAnotherItem                 = this.newAnotherItem.bind(this);
+    this.decrementOnRemoveAnotherItem   = this.decrementOnRemoveAnotherItem.bind(this);
+    this.changeElement                  = this.changeElement.bind(this);
+    this.removeElement                  = this.removeElement.bind(this);
+    this.updateSelectedAfterRemove      = this.updateSelectedAfterRemove.bind(this);
   }
 
   childrenToItems( children ) {
+    if ( children === undefined )
+      return [];
+
     if ( Array.isArray(children) )
       return children.map( this.childrenToItem );
 
-    else
-      return [ this.childrenToItem( children ) ];
+    return [ this.childrenToItem( children ) ];
   }
 
   childrenToItem( item ) {
@@ -89,18 +97,26 @@ class Selector extends Component {
   /*
       keys==[key,...]
   */
-  invokeOnChange(keys ) {
-    if( !('onChange' in this.props) )
-      return;
+  invokeOnChange( keys ) {
+    const invokeData = this.invokeOnChangePreprocess(keys);
 
-    if( this.props.single )
-      this.props.onChange( keys[0], this.state.items.find( item => item.key === keys[0] ).value );
-    else {
-      this.props.onChange( keys.map( key => ({
-        key: key,
-        value: this.state.items.find( item => item.key === key ).value
-      }) ) );
-    }
+    if( 'onChange' in this.props )
+      this.props.onChange( invokeData );
+
+    this.updateValueSelector( invokeData );
+  }
+
+  invokeOnChangePreprocess( keys ) {
+    return keys.map( key => ({
+      key: key,
+      value: this.state.items.find( item => item.key === key ).value
+    }) );
+  }
+
+  updateValueSelector( data ) {
+    this.setState({
+      valueSelector: JSON.stringify( data )
+    });
   }
 
   newAnotherItem( value ) {
@@ -111,12 +127,21 @@ class Selector extends Component {
 
     this.setState( (oldState) => ({
       nextAnotherItem: oldState.nextAnotherItem + 1,
+      countAnotherItems: oldState.countAnotherItems + 1,
       items: [
         ...oldState.items,
-        this.childrenToItem( <SelectorInputItem keyItem={key} value={value} removable /> )
+        this.childrenToItem( <AnotherItem keyItem={key} value={value} onRemove={this.decrementOnRemoveAnotherItem} /> )
       ]
     }) );
 
+  }
+
+  // здесь выполняется ТОЛЬКО декремент countAnotherItems,
+  // само удаление произойдёт в другой функции и присваивается эта функция при рендере
+  decrementOnRemoveAnotherItem() {
+    this.setState( (oldState) => ({
+      countAnotherItems: oldState.countAnotherItems - 1
+    }) );
   }
 
   changeElement( key, value ) {
@@ -156,13 +181,14 @@ class Selector extends Component {
   }
 
   render() {
-    const { another, anothers } = this.props;
-    const { selected, nextAnotherItem, items } = this.state;
+    const { another, anothers, name } = this.props;
+    const { selected, countAnotherItems, items, valueSelector } = this.state;
 
-    const anotherActive = anothers || (another && nextAnotherItem === 0);
+    const anotherActive = anothers || (another && countAnotherItems === 0);
 
     return (
       <ButtonGroup className={'selector'} >
+        <input type={'hidden'} name={name} value={valueSelector} />
         { items.map( el => {
           const { key, funcComponent } = el;
           return (
